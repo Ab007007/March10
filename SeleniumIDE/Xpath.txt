@@ -1,0 +1,109 @@
+css=input[name='username']
+css=input[id='username']
+css=#username
+css=input#username
+css=input[name='username'][id='username']
+css=input[class='textField']
+css=input.textField
+css=.textField
+css=input[name='pwd']
+
+--------------------------------- XPTAH TECHNIQUES ------------------------------
+
+
+1. Absolute
+/html/body/table/tbody/........./img
+2. Relative
+1 -->  //htmlTag
+2 --> writing xpath using attributes
+		//htmltag[@propertyname='propertyValue']
+	ex:
+		//input[@id='username']
+		//input[@class='textField pwdfield']
+3 --> AND , OR
+		//htmltag[@propertyname1='propertyValue1' and @propertyname2='propertyValue2']
+		//htmltag[@propertyname1='propertyValue1' or @propertyname2='propertyValue2']
+	ex:
+		//input[@type='text' and @class='textField' and @id='username']
+		
+	ex:
+		//input[@id='username' or @name='pwd']	
+	//div[@id='rb-calendar_onward_cal']//td[(@class='we day' or @class='wd day' or @class='current day') and text()='17']
+	
+	
+4 --> use functions while writing xpath.
+	--> text()
+	//htmltag[text()='complete text of a html tag']
+	//div[text()='Login ']
+	//td[text()='Please identify yourself']
+	
+	-->contains(arg1,arg2)
+		arg1-> propertyName--> @propertyname
+			   function--> text()
+		arg2-> Value, partial value of propertyname or text present on an element
+	ex:
+	//label[contains(text(),'Keep me')]
+	//img[contains(@src,'timer.png')]
+	
+	-->starts-with(arg1,arg2) ==>similor to contains
+	//h3[starts-with(text(),'Intellipaat')]
+	//button[starts-with(@id,'ext-gen') and text()='Non-Billable']
+5 -->
+Traversing from parent to child.
+	//div[@id='rb-calendar_onward_cal']/table  ==>immideate child
+	//div[@id='rb-calendar_onward_cal']//td[text()='18']  ==> any where in parent element
+
+6 -->
+	Traversing from child to parent...
+	or
+	Handling dependent and independent Elements
+	
+	step-1-->
+	//htmltag[@propertyname='propertyvalue'] -->xpath of child 
+	//htmltagofParent[keep the child xpath with out //]
+	==>//htmltagofParent[htmltag[@propertyname='propertyvalue']]
+	
+
+Ex-->
+//tr[th[text()='Directed by']]//a
+//div[div[div[a[contains(text(),'Mini Kerala - Value Added')]]]]//p[starts-with(@id,'package_price')]/span[@class='ng-binding ng-scope']
+
+//div[div[div[a[contains(text(),'Kerala - A Lovers Paradise - Value Added')]]]]//p[starts-with(@id,'package_price')]/span[@class='ng-binding ng-scope']
+
+//div[div[div[a[contains(text(),'Super Saver Kashmir with Gulmarg 2019')]]]]//p[starts-with(@id,'package_price')]/span[@class='ng-binding ng-scope']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+
+		
+	   
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

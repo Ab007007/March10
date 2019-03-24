@@ -1,0 +1,92 @@
+	
+What are Locators?
+Locator is a command that tells Selenium IDE which GUI elements its needs to operate on.
+
+The different types of Locators in Selenium IDE
+
+Cascading Style Sheets
+Cascading Style Sheets (CSS) is a simple mechanism for adding style (e.g., fonts, colors, spacing) to Web documents.
+{Torn Jeans, Ripped Jeans}
+
+
+ CSS Selector
+  Tag and ID  
+	css=#username
+  Tag and class
+	css=.textField
+  Tag and attribute
+	css=input#username
+	css=input.textField
+ Tag, class, and attribute
+	css=tag.class[attribute=value]
+ Inner text
+	css=tag:contains("inner text")
+
+XPath is defined as XML path. It is a syntax or language for finding any element on the web page using XML path expression. XPath is used to find the location of any element on a webpage using HTML DOM structure.
+
+ ID
+ Name
+ Link Text
+Expression : 
+	CSS:
+	css=htmltag[propertyname='propertyValue']
+	css=#idvalue
+	css=.classname
+ XPath--> is an expression used to identify the element by specifying Path of the element wrt HTML Tree strusture
+ ex:
+ <html>
+	<body>
+		<input type='text' id ='345'>
+		<input type='text' id ='123'>
+	</body>
+</html>
+==>/html/body/input 
+==> //input
+ Absolute xpath:
+	/html/body/......
+ Relative xpath:
+	//htmltag
+ 1. basic xpath
+		//htmltag[@propertyname='propertyValue']
+ 2. contains() - with attribute or text\
+	//htmltag[contains(arg1,arg2)]
+	arg1- text() or any attribute
+	arg2 - partial text or partial attribute value
+	//a[text(),'Gma']
+	//a[@href,'.com/mail']
+ 3. text()
+	//htmltag[text()='completTextOfAHtmlElement']
+ 4. starts-with() -//htmltag[starts-with(@propertyname,'propertyValue')]
+ 5. Using Regular Expression in xpath - and or   -->
+	//htmltag[propertyname1='propertyValue1' and propertyname2='propertyValue2']
+ 
+	//htmltag[propertyname1='propertyValue1' or propertyname2='propertyValue2']
+ 
+ https://www.crossword.in/books
+ 6. Xpath axes methods:
+	6.1 getting subcontents in wiki-->
+		 following  -->https://en.wikipedia.org/wiki/Mission:_Impossible_%E2%80%93_Fallout
+		xpath/following::input
+	6.2 ancestor
+		//a[text()='Books']/ancestor::nav  ->makemytrip  //p[text()='Bangalore-Cochin']/ancestor::div[@class='fd_card__hotel clearfix']//span
+	6.3 child
+		find the child of the current node.
+	6.4 preceeding
+	6.5 following-sibling ->use gsm arena
+	6.6 preceeding-sibling
+ 7. handling dependent and independent elementsits
+ 8. //*[@id='loadmap-chart']/*[name()='svg']
+	//div[div[	]]//div[@class='fare d-block']
+	
+	
+	
+	//div[div[div[a[contains(text(),'Spanish Delight 2019 (Group Package)')]]]]//p[@class='holi-listing-list-actualrate din_medium ng-scope']/span[@class='ng-binding ng-scope']
+
+	//div[div[div[a[contains(text(),'Spanish Delight 2019 (Group Package)')]]]]//p[starts-with(@id,'package_price')]/span[@class='ng-binding ng-scope']
+	
+	//a[contains(text(),'Spanish Delight 2019 (Group Package)')]/ancestor::div[contains(@id,'package_section')]//p[starts-with(@id,'package_price')]/span[@class='ng-binding ng-scope']
+
+
+	
+	
+	
